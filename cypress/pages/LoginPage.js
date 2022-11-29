@@ -1,6 +1,6 @@
+
 class HomeLocators {
-
-
+  
   getUserName() {
     return cy.get("#user-name")
   }
