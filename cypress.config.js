@@ -32,7 +32,7 @@ module.exports = defineConfig({
       return config;
     },
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "https://mydoctorportal.herokuapp.com",
+    baseUrl: "https://www.saucedemo.com",
     chromeWebSecurity: false,
   },
 });
