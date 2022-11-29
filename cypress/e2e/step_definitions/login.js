@@ -3,14 +3,16 @@ import {
   When,
   Then,
 } from "@badeball/cypress-cucumber-preprocessor";
-const loginPage = require("../../pages/LoginPage");
+import LoginPage from '../../pageObject/login.js'
+
+const login = new LoginPage();
 
 Given("A web browser is at the saucelabs login page", () => {
   cy.visit("/");
 });
 
 When("A user enters the username {string}, the password {string}, and clicks on the login button", (username,password) => {
-  loginPage.submitLogin(username,password)
+  login.typeText(username);
 });
 
 When("A user provides incorrect credentials, and clicks on the login button", (table) => {

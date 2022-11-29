@@ -1,13 +1,8 @@
-class homeSaucePage {
-  elements = {
-    usernameInput: () => cy.get("#user-name"),
-    passwordInput: () => cy.get("#password"),
-    loginBtn: () => cy.get("#login-button"),
-    errorMessage: () => cy.get('h3[data-test="error"]'),
-  };
+class HomeLocators {
 
-  typeUsername(username) {
-    this.elements.usernameInput().type(username);
+
+  getUserName() {
+    return cy.get("#user-name")
   }
 
   typePassword(password) {
@@ -25,4 +20,4 @@ class homeSaucePage {
   }
 }
 
-module.exports = new homeSaucePage();
+export default HomeLocators;
