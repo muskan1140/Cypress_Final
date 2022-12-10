@@ -4,6 +4,12 @@ class GenericActions {
         cy.visit("/");
     }
 
+    wait(time){
+        cy.wait(time).then(function(){
+            cy.log('Wait for' + time);
+        })
+    }
+
     checkUrl(url){
         cy.url().should('contains', url).then( function(){
             cy.log("--> Successs: Current url contains the expected url")

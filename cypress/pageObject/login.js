@@ -1,4 +1,4 @@
-import LoginPageLocators from "../pages/loginPage";
+import LoginPageLocators from "../pages/loginPageLocators";
 import GenericActions from "../utilities/genericActions";
 import WebText from '../helpers/webText';
 import Decryption from "../utilities/decryption";
@@ -43,11 +43,12 @@ class LoginPage {
         webButton.check(login.getRememberMeCheckBox())
     }
 
-    clickButton(string){
+    clickButtonByVisibleText(string){
         webXpath.clickByXpath("visibleText",string)
     }
 
     checkUrlContainsText(url){
+        generic.wait(3000);
         generic.checkUrl(url);
     }
 
