@@ -1,5 +1,5 @@
 import HomeLocators from "../pages/LoginPage";
-import GenericActions from "../Utilities/genericActions";
+import GenericActions from "../helpers/genericActions";
 
 const generic = new GenericActions();
 const home = new HomeLocators();
