@@ -20,7 +20,7 @@ module.exports = defineConfig({
       return config;
     },
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "https://www.saucedemo.com",
+    baseUrl: "https://admin-demo.nopcommerce.com",
     chromeWebSecurity: false,
   },
 });

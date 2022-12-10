@@ -1,11 +1,17 @@
-import {
-    Given,
-    When,
-    Then,
-  } from "@badeball/cypress-cucumber-preprocessor";
+import {Given,When,Then} from "@badeball/cypress-cucumber-preprocessor";
+import LoginPage from '../../pageObject/login'
 
+const loginPage = new LoginPage();
 
-Given("A web browser is at the saucelabs login page", () => {
-    cy.visit("/");
+Given("I am on the login page", () => {
+    loginPage.visit()
 });
-  
+
+
+When("I click on the {string} button", (label) => {
+    loginPage.clickButton(label)
+});
+
+Then("I should see {string} message on the page", (text) => {
+    loginPage.checkMessageVisibility(text)
+});

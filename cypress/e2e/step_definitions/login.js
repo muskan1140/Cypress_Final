@@ -1,29 +1,31 @@
-import {
-  Given,
-  When,
-  Then,
-} from "@badeball/cypress-cucumber-preprocessor";
-
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage from '../../pageObject/login.js'
+
 
 const login = new LoginPage();
 
 
-When("A user enters the username {string}, the password {string}, and clicks on the login button", (username,password) => {
-  login.typeText(username);
+When("I should see {string} heading on the page", (heading) => {
+  login.checkVisibilityOfHeading(heading);
 });
 
-// When("A user provides incorrect credentials, and clicks on the login button", (table) => {
-//   table.hashes().forEach((row) => {
-//     cy.log(row.username);
-//     cy.log(row.password);
-//     loginPage.submitLogin(row.username, row.password)
+Then("I should see {string} subheading on the page", (subheading) => {
+  login.checkVisibilityOfSubHeading(subheading)
+});
 
-//   });
-// });
-// Then("the url will contains the inventory subdirectory", () => {
-//   cy.url().should("contains", "/inventory.html");
-// });
-// Then("The error message {string} is displayed", (errorMessage) => {
-//   loginPage.elements.errorMessage().should("have.text", errorMessage);
-// });
+When("I fill {string} email on the email input field", (email) => {
+  login.typeEmailOnEmailInputField(email)
+});
+
+When("I fill {string} password on the password input field", (password) => {
+  login.typePasswordOnPasswordInputField(password)
+});
+
+
+When("I check the remember me checkbox", () => {
+  login.checkRememberMeCheckbox()
+});
+
+Then("I should navigate to the {string} dashboard page", (text) => {
+  login.checkUrlContainsText(text)
+});

@@ -1,22 +1,33 @@
 Feature: Login page
 
-    Feature Login page will work depending on the user credentials.
+    As a tester, I want to test the "https://admin-demo.nopcommerce.com/" application login page
 
     Background:
-        Given A web browser is at the saucelabs login page
-    Scenario: Success Login
-        When A user enters the username "standard_user", the password "secret_sauce", and clicks on the login button
-    #     Then the url will contains the inventory subdirectoryt
-    # Scenario: Blocked Login
-    #     When A user enters the username "locked_out_user", the password "secret_sauce", and clicks on the login button
-    #     Then The error message "Epic sadface: Sorry, this user has been locked out." is displayed
-    # Scenario: Incorrect Username Login
-    #     When A user provides incorrect credentials, and clicks on the login button
-    #         | username | password     |
-    #         | testName | secret_sauce |
-    #     Then The error message "Epic sadface: Username and password do not match any user in this service" is displayed
-    # Scenario: Incorrect Password Login
-    #     When A user provides incorrect credentials, and clicks on the login button
-    #         | username      | password     |
-    #         | standard_user | testPassword |
-    #     Then The error message "Epic sadface: Username and password do not match any user in this service" is displayed
+        Given I am on the login page
+
+    Scenario: Checking the visibility of heading and subheading on the page
+       Then I should see "Admin area demo" heading on the page
+       And I should see "Welcome, please sign in!" subheading on the page
+
+    Scenario Outline: Check user is able to successfully log in to Dashboard application with the valid credentials
+        When I fill "<email>" email on the email input field
+        And I fill "<password>" password on the password input field
+        And I check the remember me checkbox
+        And I click on the "Log in" button
+        Then I should navigate to the "admin" dashboard page
+
+        Examples:
+            | email       | password       |
+            | valid_email | valid_password |
+
+
+    Scenario Outline: Check user is not able to log in to Dashboard application with the invalid credentials
+        When I fill "<email>" email on the email input field
+        And I fill "<password>" password on the password input field
+        And I check the remember me checkbox
+        And I click on the "Log in" button
+        Then I should see "<message>" message on the page
+
+        Examples:
+            | email         | password         | message                                                          |
+            | invalid_email | invalid_password | Login was unsuccessful. Please correct the errors and try again. |
