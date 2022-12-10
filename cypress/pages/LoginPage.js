@@ -1,23 +1,26 @@
 
-class HomeLocators {
+class LoginPageLocators {
   
-  getUserName() {
-    return cy.get("#user-name")
+  getHeading(){
+    return cy.get("div.page-title h1");
   }
 
-  typePassword(password) {
-    this.elements.passwordInput().type(password);
+  getSubHeading(){
+    return cy.get('div.title strong');
   }
 
-  clickLogin() {
-    this.elements.loginBtn().click();
+  getEmailField(){
+    return cy.get("#Email");
   }
 
-  submitLogin(username,password){
-    this.elements.usernameInput().type(username);
-    this.elements.passwordInput().type(password);
-    this.elements.loginBtn().click();
+  getPasswordField(){
+    return cy.get("#Password");
   }
+
+  getRememberMeCheckBox(){
+    return cy.get("#RememberMe");
+  }
+
 }
 
-export default HomeLocators;
+export default LoginPageLocators;

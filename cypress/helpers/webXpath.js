@@ -1,21 +1,14 @@
 class WebXpath {
  
-    setXpathValue(type,element){
+    setXpathValue(type,word){
         
         let xpathString = '';
 
-        if(type === 'name'){
-            xpathString = `//*[contains(@name,'${element}')]`
+        if(type === 'name' || type === 'id' || type === 'class'){
+            xpathString = `//*[contains(@${type},'${word}')]`
         }
-        else if (type === 'id'){
-            xpathString = `//*[contains(@id,'${element}')]`
-        }
-        else if (type === 'class'){
-            xpathString = `//*[contains(@class,'${element}')]`
-        }
-
         else if(type === 'visibleText'){
-            xpathString = `//*[contains(text(),'${element}')]`
+            xpathString = `//*[contains(text(),'${word}')]`
         }
 
         return xpathString;
@@ -30,13 +23,24 @@ class WebXpath {
         });
     }
 
-    typeTextByXpath(type,element,data){
-        let getXpathValue = this.setXpathValue(type,element);
-        cy.xpath(getXpathValue).clear().type(data).then(function () {
+    typeTextByXpath(type,word){
+        let getXpathValue = this.setXpathValue(type,word);
+        cy.xpath(getXpathValue).clear().type(word).then(function () {
             cy.log('Typing of the field with value: ' + data);
         }, function (err) {
             cy.log('--->Error: Typing of the field with value:' + data + ' was not done due to: ' + err);
         });
+    }
+
+    shouldContainTextByXpath(type,text) {
+        let getXpathValue = this.setXpathValue(type,text);
+        cy.xpath(getXpathValue).should('contain', text).then(function (text) {
+            cy.log("The element is have: " + text);
+
+        }, function (err) {
+            cy.log("--->Error: The element dosn't have text due to: " + err);
+        });
+
     }
 
 }

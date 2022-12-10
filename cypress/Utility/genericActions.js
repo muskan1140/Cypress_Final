@@ -1,5 +1,17 @@
 class GenericActions {
 
+    visit(){
+        cy.visit("/");
+    }
+
+    checkUrl(url){
+        cy.url().should('contains', url).then( function(){
+            cy.log("--> Successs: Current url contains the expected url")
+        }),function(err){
+            cy.log("---> Error: The url contains:" + url + "does not include the current url due to: " + err);
+        };
+    }
+
    refresh() {
         cy.reload().then(function () {
             cy.log("--->Success: The page got refreshed");
