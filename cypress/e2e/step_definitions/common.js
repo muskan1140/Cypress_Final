@@ -9,7 +9,7 @@ Given("I am on the login page", () => {
 
 
 When("I click on the {string} button", (label) => {
-    loginPage.clickButton(label)
+    loginPage.clickButtonByVisibleText(label)
 });
 
 Then("I should see {string} message on the page", (text) => {
