@@ -52,7 +52,7 @@ class LoginPage {
         generic.checkUrl(url);
     }
 
-    checkMessageVisibility(string) {
+    checkTextVisibility(string) {
         webXpath.shouldContainTextByXpath("visibleText", string)
     }
 

@@ -19,7 +19,7 @@ When("I click on the {string} button", (label) => {
 });
 
 Then("I should see {string} message on the page", (text) => {
-    loginPage.checkMessageVisibility(text)
+    loginPage.checkTextVisibility(text)
 });
 
 
@@ -38,9 +38,9 @@ When("I check the {string} checkbox",function(string){
 });
 
 Then("I should navigate to the {string} dashboard page", (text) => {
-    login.checkUrlContainsText(text)
+    loginPage.checkUrlContainsText(text)
 });
 
 Then("I should see {string} heading on the page", (text) => {
-    loginPage.checkMessageVisibility(text)
+    loginPage.checkTextVisibility(text)
 });
