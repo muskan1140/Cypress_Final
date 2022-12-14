@@ -1,7 +1,7 @@
 class WebButton {
   
     click(element) {
-        element.click().then(function () {
+        cy.get(element).click().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
@@ -9,7 +9,7 @@ class WebButton {
     }
 
     multipleClick(element) {
-        element.click({ multiple: true }).then(function () {
+        cy.get(element).click({ multiple: true }).then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
@@ -17,7 +17,7 @@ class WebButton {
     }
 
     focusClick(element) {
-        element.click({ force: true }).then(function () {
+        cy.get(element).click({ force: true }).then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
@@ -25,7 +25,7 @@ class WebButton {
     }
 
     realclick(element) {
-        element.realClick().then(function () {
+        cy.get(element).realClick().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
@@ -33,15 +33,12 @@ class WebButton {
     }
 
     check(element){
-        element.check().then(function() {
+        cy.get(element).check().then(function() {
             cy.log("The element got checked");
         }), function (err){
             cy.log("-->Error: The element couldn't get checked due to:"+ err);
         }
     }
-
-
-
 }
 
 export default WebButton;
