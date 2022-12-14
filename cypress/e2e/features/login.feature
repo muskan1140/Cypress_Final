@@ -18,7 +18,7 @@ Feature: Login page
 
         Examples:
             | email       | password       |
-            | valid_email | valid_password |
+            | admin_email | admin_password |
 
 
     Scenario Outline: Check user is not able to log in to Dashboard application with the invalid credentials

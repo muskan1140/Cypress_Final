@@ -14,46 +14,57 @@ const webTextBox = new WebTextBox();
 const webButton = new WebButton();
 const webXpath = new WebXpath();
 
-class LoginPage { 
+class LoginPage {
 
 
-    visit(){
+    visit() {
         generic.visit();
     }
 
-    checkVisibilityOfHeading(heading){
-        webText.verifyExactText(login.getHeading(),heading)
+    checkVisibilityOfHeading(heading) {
+        webText.verifyExactText(login.getHeading(), heading)
     }
 
-    checkVisibilityOfSubHeading(subheading){
-        webText.verifyExactText(login.getSubHeading(),subheading)
+    checkVisibilityOfSubHeading(subheading) {
+        webText.verifyExactText(login.getSubHeading(), subheading)
     }
 
-    typeEmailOnEmailInputField(email){
+    typeEmailOnEmailInputField(email) {
         let decodedEmail = decode.getDecodedString(email);
-        webTextBox.typeText(login.getEmailField(),decodedEmail) 
+        webTextBox.typeText(login.getEmailField(), decodedEmail)
     }
 
-    typePasswordOnPasswordInputField(password){
+    typePasswordOnPasswordInputField(password) {
         let decodedPassword = decode.getDecodedString(password);
-        webTextBox.typeText(login.getPasswordField(),decodedPassword) 
+        webTextBox.typeText(login.getPasswordField(), decodedPassword)
     }
 
-    checkRememberMeCheckbox(){
+    checkRememberMeCheckbox() {
         webButton.check(login.getRememberMeCheckBox())
     }
 
-    clickButtonByVisibleText(string){
-        webXpath.clickByXpath("visibleText",string)
+    clickButtonByVisibleText(string) {
+        webXpath.clickByXpath("visibleText", string)
     }
 
-    checkUrlContainsText(url){
+    checkUrlContainsText(url) {
         generic.wait(3000);
         generic.checkUrl(url);
     }
 
-    checkMessageVisibility(string){
-        webXpath.shouldContainTextByXpath("visibleText",string)
+    checkMessageVisibility(string) {
+        webXpath.shouldContainTextByXpath("visibleText", string)
+    }
+
+    iloginWithAdminCredentials(user) {
+
+        generic.visit();
+        let decodedEmail = decode.getDecodedString(`${user}_email`);
+        webTextBox.typeText(login.getEmailField(), decodedEmail);
+        let decodedPassword = decode.getDecodedString(`${user}_password`);
+        webTextBox.typeText(login.getPasswordField(), decodedPassword);
+        webButton.check(login.getRememberMeCheckBox());
+        webXpath.clickByXpath("visibleText", "Log in")
     }
 }
 

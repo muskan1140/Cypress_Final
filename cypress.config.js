@@ -22,5 +22,8 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/features/*.feature",
     baseUrl: "https://admin-demo.nopcommerce.com",
     chromeWebSecurity: false,
+    chromeWebSecurity: false,
+    viewportHeight: 900,
+    viewportWidth: 1440,
   },
 });

@@ -1,9 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage from '../../pageObject/login.js'
 
-
 const login = new LoginPage();
-
 
 When("I should see {string} heading on the page", (heading) => {
   login.checkVisibilityOfHeading(heading);
