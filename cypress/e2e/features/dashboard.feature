@@ -27,7 +27,7 @@ Feature: Dashboard
  @DA003 @Regression @NotAutomated @Dashboard @SpecialitiesCard @Patient @MYD-76
   Scenario Outline: Check the functionality of View all specialities link
     Given user navigates to the "<Page Type>" page
-    When user clicks on the "view all specialities" button
+    When user clicks on the "view All Specialities" button
     Then the corresponding page appears with the expected elements: "<Item>"
 
   Examples:

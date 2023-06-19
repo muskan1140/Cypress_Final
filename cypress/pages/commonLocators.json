@@ -12,7 +12,7 @@
     "create Password": "input#password",
     "confirm Password":"input#confirm_password",
     "register":"form [type='submit']:last()",
-    "view all specialities": "div a:contains('View all Specialities...')",
+    "view All Specialities": "div a:contains('View all Specialities...')",
     "fourth Speciality Card": "div .MuiPaper-outlined.MuiPaper-rounded:eq(3)",
     "first Doctor Card": "div .MuiCardContent-root:first()",
     "doctor Cards": "div .MuiCardContent-root",

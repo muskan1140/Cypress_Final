@@ -6,6 +6,7 @@ Feature: Search Bar
     When user enters value "<Data>" in the "doctor" input field
     And user clicks on the "search Icon" button
     Then the corresponding page appears with the expected elements: "<Item>"
+    
     Examples: 
       | Data    | Item                                  | Page Type | 
       | Rishika | Dr. Rishika Gupta                     | Homepage  | 
