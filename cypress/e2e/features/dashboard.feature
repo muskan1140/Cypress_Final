@@ -7,7 +7,7 @@ Feature: Dashboard
 
   Examples:
       | Page Type | Item                         | 
-      | homepage  | 20+ Specialities,220+ Doctors|
+      | Homepage  | 20+ Specialities,220+ Doctors|
 
 
 # //-------------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Feature: Dashboard
 
     Examples: 
       | Page Type | SpecialityCard         | Item                                              |
-      | homepage  | fourth Speciality Card | Dr. Layne Ryan,Dr. Henry Friesen,Dr. Alberta Yost |
+      | Homepage  | fourth Speciality Card | Dr. Layne Ryan,Dr. Henry Friesen,Dr. Alberta Yost |
 
 # //--------------------------------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ Feature: Dashboard
 
   Examples:
       | Page Type | Item                                                  |
-      | homepage  | Dermatology,Bone Marrow,Clinical Psychology,Audiology |
+      | Homepage  | Dermatology,Bone Marrow,Clinical Psychology,Audiology |
 
 
 # //------------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ Feature: Dashboard
 
   Examples:
       | Page Type | Doctor Card       | Item                                                          |
-      | homepage  | first Doctor Card | Consultation Fee: Rs. 3022,Specialities,Qualifications,Reviews|
+      | Homepage  | first Doctor Card | Consultation Fee: Rs. 3022,Specialities,Qualifications,Reviews|
 
 
 # //------------------------------------------------------------------------------------------------------
@@ -60,4 +60,4 @@ Feature: Dashboard
 
     Examples:
       | Page Type | Number | Button | Value | text |
-      | homepage  | 3      | 2      | 2     | 3    |
+      | Homepage  | 3      | 2      | 2     | 3    |

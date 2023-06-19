@@ -11,4 +11,4 @@ Then user navigates to the "<Page Type>" page
 
     Examples:
       | Page Type |email         | password         |
-      | homepage  |PATIENT_EMAIL | PATIENT_PASSWORD |
+      | Homepage  |PATIENT_EMAIL | PATIENT_PASSWORD |

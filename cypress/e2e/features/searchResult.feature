@@ -16,4 +16,4 @@ Feature: Search page result functionality
 
     Examples:
       |Page Type| keyword    | special       | page | count |
-      | homepage| Alberta    | Cosmetology   | 1    | 5     |
+      | Homepage| Alberta    | Cosmetology   | 1    | 5     |

@@ -8,8 +8,8 @@ Feature: Search Bar
     Then the corresponding page appears with the expected elements: "<Item>"
     Examples: 
       | Data    | Item                                  | Page Type | 
-      | Rishika | Dr. Rishika Gupta                     | homepage  | 
-      | Ra      | Dr. Kasandra Halvorson,Dr. Mireya Rath| homepage  | 
+      | Rishika | Dr. Rishika Gupta                     | Homepage  | 
+      | Ra      | Dr. Kasandra Halvorson,Dr. Mireya Rath| Homepage  | 
 
 
 # //---------------------------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ Feature: Search Bar
 
     Examples:  
       | Data        | Item                                  | Page Type | 
-      | Dermatology | Dr. Blake Terry,Dr. Yvonne Balistreri | homepage  |
+      | Dermatology | Dr. Blake Terry,Dr. Yvonne Balistreri | Homepage  |
 
 
 # //-----------------------------------------------------------------------------------------------------------
@@ -39,8 +39,8 @@ Feature: Search Bar
 
     Examples: 
       | Data     | Item                  | Page Type | 
-      | Iva      | Dr. Iva Jerde         | homepage  | 
-      | Kasandra | Dr. Kasandra Halvorson| homepage  |
+      | Iva      | Dr. Iva Jerde         | Homepage  | 
+      | Kasandra | Dr. Kasandra Halvorson| Homepage  |
 
 
 # //---------------------------------------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ Feature: Search Bar
 
     Examples: 
       | Page Type | Data      | alert Message    |
-      | homepage  | Rish123@# | No results found | 
+      | Homepage  | Rish123@# | No results found | 
 
 # //--------------------------------------------------------------------------------------------------------------------
 
@@ -68,4 +68,4 @@ Feature: Search Bar
 
     Examples: 
       | Data     | Page Type | alert Message |
-      | 1245@#$% | homepage  | No options    | 
+      | 1245@#$% | Homepage  | No options    | 
