@@ -1,7 +1,7 @@
 import {Given,When,Then} from "@badeball/cypress-cucumber-preprocessor";
 import WebTextBox from "../../helpers/webTextBox";
 import WebButton from "../../helpers/webButton";
-import Urls from "../../../urls/Urls.json";
+import Urls from "../../urls/Urls.json";
 import commonLocators from "../../pages/commonLocators.json";
 import GenericActions from "../../utilities/genericActions";
 import WebXpath from "../../helpers/webXpath";
@@ -10,12 +10,12 @@ import WebText from "../../helpers/webText";
 
 const webtextBox = new WebTextBox();
 const webbutton = new WebButton();
-const generic = new GenericActions();
+const actions = new GenericActions();
 const webxpath = new WebXpath();
 const webtext = new WebText();
 
 Given('user navigates to the {string} page',(url)=>{
-    generic.visit(Urls[url])
+    actions.visit(Urls[url])
 });
 
 When("user clicks on the {string} button",(element)=> {
