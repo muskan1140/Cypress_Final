@@ -1,0 +1,6 @@
+{
+    "homepage":"/",
+    "PatientRegistration":"/auth/signup",
+    "Dashboard":"/"
+
+}

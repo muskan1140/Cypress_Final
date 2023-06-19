@@ -1,24 +1,24 @@
 class GenericActions {
 
-    visit(){
-        cy.visit("/");
+    visit(url) {
+        cy.visit(`${url}`);
     }
 
-    wait(time){
-        cy.wait(time).then(function(){
+    wait(time) {
+        cy.wait(time).then(function () {
             cy.log('Wait for' + time);
         })
     }
 
-    checkUrl(url){
-        cy.url().should('contains', url).then( function(){
+    checkUrl(url) {
+        cy.url().should('contains', url).then(function () {
             cy.log("--> Successs: Current url contains the expected url")
-        }),function(err){
+        }), function (err) {
             cy.log("---> Error: The url contains:" + url + "does not include the current url due to: " + err);
         };
     }
 
-   refresh() {
+    refresh() {
         cy.reload().then(function () {
             cy.log("--->Success: The page got refreshed");
         }, function (err) {
@@ -44,7 +44,7 @@ class GenericActions {
         });
 
     }
-    
+
     clearCookies() {
         try {
             cy.clearCookies();
@@ -102,10 +102,10 @@ class GenericActions {
         return email;
     }
 
-    generateMobileNumber(){
+    generateMobileNumber() {
         var num = "0123456789";
         var mobileNumber = 9;
-        for (var i= 0;i <= 8;i++){
+        for (var i = 0; i <= 8; i++) {
             mobileNumber += num.charAt(Math.floor(Math.random() * num.length))
         }
 

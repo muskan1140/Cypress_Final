@@ -1,7 +1,7 @@
 class WebButton {
   
     click(element) {
-        cy.get(element).click().then(function () {
+    cy.get(element).click().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);

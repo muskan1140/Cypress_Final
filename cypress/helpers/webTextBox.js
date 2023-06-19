@@ -10,7 +10,7 @@ class WebTextBox {
     }
 
     typeText(element, data) {
-        cy.get(element).clear().type(data).then(function () {
+        cy.get(element).type(data).then(function () {
             cy.log('Typing of the field with value: ' + data);
         }, function (err) {
             cy.log('--->Error: Typing of the field with value:' + data + ' was not done due to: ' + err);

@@ -1,46 +1,44 @@
 import {Given,When,Then} from "@badeball/cypress-cucumber-preprocessor";
-import LoginPage from '../../pageObject/login';
-import DashBoardPage from "../../pageObject/dashboard";
-import CommonFile from "../../pageObject/commonFile";
-import Decryption from "../../utilities/decryption";
+import WebTextBox from "../../helpers/webTextBox";
+import WebButton from "../../helpers/webButton";
+import Urls from "../../../urls/Urls.json";
+import commonLocators from "../../pages/commonLocators.json";
+import GenericActions from "../../utilities/genericActions";
+import WebXpath from "../../helpers/webXpath";
+import WebText from "../../helpers/webText";
 
-const loginPage = new LoginPage();
-const dashboard = new DashBoardPage();
-const commonFile = new CommonFile();
-const decode = new Decryption();
 
-Given("I am on the login page", () => {
-    loginPage.visit()
+const webtextBox = new WebTextBox();
+const webbutton = new WebButton();
+const generic = new GenericActions();
+const webxpath = new WebXpath();
+const webtext = new WebText();
+
+Given('user navigates to the {string} page',(url)=>{
+    generic.visit(Urls[url])
 });
 
-
-When("I click on the {string} button", (label) => {
-    loginPage.clickButtonByVisibleText(label)
+When("user clicks on the {string} button",(element)=> {
+    webbutton.click(commonLocators[element])
 });
 
-Then("I should see {string} message on the page", (text) => {
-    loginPage.checkTextVisibility(text)
+When('user enters value {string} in the {string} input field',(name,element)=>{
+    webtextBox.typeText(commonLocators[element],name)
 });
 
-
-// Given("I login to the dashboard with {string} credentials",(user) => {
-//     loginPage.iloginWithAdminCredentials(user)
-// });
-
-When("I fill {string} on the {string} input field",function(string1,string2){
-    let decodedText = decode.getDecodedString(string1);
-    commonFile.iEnterValue(string2,decodedText)
+Then('user can view message {string}', (text) => {
+    webxpath.shouldContainTextByXpath(text)
 });
 
-
-When("I check the {string} checkbox",function(string){
-    commonFile.iCheckedCheckBox(string)
+Then('the corresponding page appears with the expected elements: {string}',(element)=>{
+    let name = element.toString();
+    let doctorName = name.split(",")
+    for (let count = 0; count < doctorName.length; count++) {
+      webtext.verifyPartialText(element, doctorName[count]);
+    }
 });
 
-Then("I should navigate to the {string} dashboard page", (text) => {
-    loginPage.checkUrlContainsText(text)
+When('user is on {string} page of {string}', (text,element) => {
+   webtext.getText(commonLocators[element])
 });
 
-Then("I should see {string} heading on the page", (text) => {
-    loginPage.checkTextVisibility(text)
-});

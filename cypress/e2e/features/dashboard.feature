@@ -1,9 +1,63 @@
-Feature: Dashboard Page
+Feature: Dashboard
 
-    As a tester, I want to test the "https://admin-demo.nopcommerce.com/" application dashboard page
+  @DA001 @Regression @NotAutomated @Dashboard @Patient @MYD-76
+  Scenario Outline: Checking the visibility of UI element
+    Given user navigates to the "<Page Type>" page
+    Then the corresponding page appears with the expected elements: "<Item>"
 
-    Background:
-  
+  Examples:
+      | Page Type | Item                         | 
+      | homepage  | 20+ Specialities,220+ Doctors|
 
-    Scenario: Test
-          Given I login to the dashboard with "admin" credentials
+
+# //-------------------------------------------------------------------------------------------
+
+ @DA002 @Regression @Sanity @NotAutomated @Dashboard @SpecialitiesCard @Patient @MYD-76
+  Scenario Outline: Check the functionality of Specialities Card
+    Given user navigates to the "<Page Type>" page
+    When user clicks on the "<SpecialityCard>" button
+    Then the corresponding page appears with the expected elements: "<Item>"
+
+    Examples: 
+      | Page Type | SpecialityCard         | Item                                              |
+      | homepage  | fourth Speciality Card | Dr. Layne Ryan,Dr. Henry Friesen,Dr. Alberta Yost |
+
+# //--------------------------------------------------------------------------------------------
+
+ @DA003 @Regression @NotAutomated @Dashboard @SpecialitiesCard @Patient @MYD-76
+  Scenario Outline: Check the functionality of View all specialities link
+    Given user navigates to the "<Page Type>" page
+    When user clicks on the "view all specialities" button
+    Then the corresponding page appears with the expected elements: "<Item>"
+
+  Examples:
+      | Page Type | Item                                                  |
+      | homepage  | Dermatology,Bone Marrow,Clinical Psychology,Audiology |
+
+
+# //------------------------------------------------------------------------------------------------
+
+@DA004 @Regression @Sanity @NotAutomated @Dashboard @DoctorCard @Patient @MYD-76
+  Scenario Outline: Check the functionality of Doctor card
+    Given user navigates to the "<Page Type>" page
+    When user clicks on the "<Doctor Card>" button
+    Then the corresponding page appears with the expected elements: "<Item>"
+
+  Examples:
+      | Page Type | Doctor Card       | Item                                                          |
+      | homepage  | first Doctor Card | Consultation Fee: Rs. 3022,Specialities,Qualifications,Reviews|
+
+
+# //------------------------------------------------------------------------------------------------------
+
+  @DA005 @Regression @NotAutomated @Dashboard @Pagination @Patient @MYD-31
+  Scenario Outline: Check the functionality of pagination on Doctor cards by clicking on number
+    Given user navigates to the "<Page Type>" page
+    And user can view list of "doctor Cards"
+    And user is on "<Number>" page of "dash Board"
+    When user clicks on "<Button>" page of "dash Board"
+    Then user is on "<Value>" page of "dash Board"
+
+    Examples:
+      | Page Type | Number | Button | Value | text |
+      | homepage  | 3      | 2      | 2     | 3    |

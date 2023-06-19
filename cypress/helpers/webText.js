@@ -1,21 +1,37 @@
 class WebText {
    
     getText(element) {
-        try {
-            return element.invoke('text').then(function (text) {
-                return new Promise(function (resolve, reject) {
-                    cy.log("The text of element is captured which is: " + err);
-                    resolve(text);
-                })
-            })
-        }
-        catch (err) {
+        cy.get(element).invoke('text').then(function (text) {
+                    cy.log("The text of element is captured which is: " + text);
+
+
+        },function (err) {
             cy.log("--->Error: The text of the element couldn't be captured due to: " + err);
-        }
+        });
+    }
+
+    shouldBeVisible(element, text) {
+        cy.get(element).should('be.visible', text).then(function (text) {
+            cy.log("element should be visible:" + text);
+
+        },
+            function (err) {
+                cy.log("--->Error: element shouldn't be visible" + err);
+            });
+    }
+
+    type(element, value) {
+        cy.get([element]).type(value).then(function () {
+            cy.log("typing field values should be valid");
+
+        },
+            function (err) {
+                cy.log("typing field values shouldn't be valid");
+            });
     }
 
     shouldHaveText(element, text) {
-        element.should('have.text', text).then(function (text) {
+        cy.get(element).should('have.text', text).then(function (text) {
             cy.log("The element is have: " + text);
 
         }, function (err) {
@@ -23,6 +39,7 @@ class WebText {
         });
 
     }
+
     shouldHaveValue(element, value) {
         element.should('have.value', value).then(function (text) {
             cy.log("The element have value: " + value);
@@ -34,7 +51,7 @@ class WebText {
     }
 
     shouldContainText(element, text) {
-        element.should('contain', text).then(function (text) {
+        cy.get(element).should('contain', text).then(function (text) {
             cy.log("The element contain: " + text);
 
         }, function (err) {

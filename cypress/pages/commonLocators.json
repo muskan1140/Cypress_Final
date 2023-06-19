@@ -1,0 +1,28 @@
+{
+    "login":"div .MuiButton-label:first()",
+    "email":"input#emailOrMobile",
+    "password":"input#password",
+    "submit":"div .MuiButton-label:last()",
+    "full Name":"input#full_name",                                            
+    "date" : "#dropdown-day select",
+    "month" : "#dropdown-month select",
+    "year": "#dropdown-year select",
+    "user Email": "input#email_address",
+    "mobile Number": "input#mobile_number",
+    "create Password": "input#password",
+    "confirm Password":"input#confirm_password",
+    "register":"form [type='submit']:last()",
+    "view all specialities": "div a:contains('View all Specialities...')",
+    "fourth Speciality Card": "div .MuiPaper-outlined.MuiPaper-rounded:eq(3)",
+    "first Doctor Card": "div .MuiCardContent-root:first()",
+    "doctor Cards": "div .MuiCardContent-root",
+    "dash Board": "div .MuiPagination-ul .MuiButtonBase-root:eq(2)",
+    "doctor":"div .MuiInputBase-input:eq(1)",
+    "service":"div .MuiInputBase-input:first()",
+    "search Icon":"div .MuiPaper-root .MuiButtonBase-root:first()",
+    "specialities Field":"div .MuiLink-root .MuiButtonBase-root:Last()",
+    "alert Message":"div .MuiAutocomplete-noOptions",
+    "search": "div .MuiInputBase-input:last()",
+    "specialization" : "div .MuiAutocomplete-root .MuiInputBase-root"
+
+}
