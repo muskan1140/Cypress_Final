@@ -1,6 +1,4 @@
 {
     "Homepage":"/",
-    "PatientRegistration":"/auth/signup",
-    "Dashboard":"/"
-
+    "PatientRegistration":"/auth/signup"
 }
