@@ -1,19 +1,16 @@
 import {Given,When,Then} from "@badeball/cypress-cucumber-preprocessor";
-import WebTextBox from "../../helpers/webTextBox";
+import WebText from "../../helpers/webText";
 import commonLocators from "../../pages/commonLocators.json"
+import GenericActions from "../../utilities/genericActions";
 
 
-const webtextBox = new WebTextBox();
+const webText = new WebText();
+const actions = new GenericActions();
 
-
-Given('{string} keyword is {string}',(element,text)=>{
-  webtextBox.typeText(commonLocators[element],text)
+Then('user should see {string} {string}',(element,text)=>{
+  webText.shouldBeVisible(commonLocators[element],text)
 });
 
-Given('{string} is {string}', (element,text) => {
-    if(text==="Cosmetology") {
-    webtextBox.typeText(commonLocators[element], text)
-    webtextBox.typeText(commonLocators[element], '{downarrow}')
-    webtextBox.typeText(commonLocators[element], '{enter}')
-    }
-});
+Then('result page is move to {string} page',(url)=>{
+  actions.checkUrl("/")
+})

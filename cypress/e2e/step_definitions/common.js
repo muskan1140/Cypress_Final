@@ -8,37 +8,62 @@ import WebXpath from "../../helpers/webXpath";
 import WebText from "../../helpers/webText";
 
 
-const webtextBox = new WebTextBox();
-const webbutton = new WebButton();
+const webTextBox = new WebTextBox();
+const webButton = new WebButton();
 const actions = new GenericActions();
-const webxpath = new WebXpath();
-const webtext = new WebText();
+const webXpath = new WebXpath();
+const webText = new WebText();
 
 Given('user navigates to the {string} page',(url)=>{
     actions.visit(Urls[url])
 });
 
 When("user clicks on the {string} button",(element)=> {
-    webbutton.click(commonLocators[element])
+    webButton.click(commonLocators[element])
 });
 
 When('user enters value {string} in the {string} input field',(name,element)=>{
-    webtextBox.typeText(commonLocators[element],name)
+    webTextBox.typeText(commonLocators[element],name)
+    webTextBox.typeText(commonLocators[element], '{downarrow}')
+    webTextBox.typeText(commonLocators[element], '{enter}')
 });
 
 Then('user can view message {string}', (text) => {
-    webxpath.shouldContainTextByXpath(text)
+    webXpath.shouldContainTextByXpath(text)
 });
 
 Then('the corresponding page appears with the expected elements: {string}',(element)=>{
-    let name = element.toString();
-    let doctorName = name.split(",")
-    for (let count = 0; count < doctorName.length; count++) {
-      webtext.verifyPartialText(element, doctorName[count]);
-    }
+  let text = element.toString();
+  let textArray = text.split(",")
+  for (let count = 0; count < textArray.length; count++) {
+      webXpath.shouldContainTextByXpath(textArray[count])
+  }
 });
 
 When('user is on {string} page of {string}', (text,element) => {
-   webtext.getText(commonLocators[element])
+   webText.getText(commonLocators[element])
+});
+
+Given('{string} keyword is {string}',(element,text)=>{
+    webTextBox.typeText(commonLocators[element],text)
+  });
+  
+Given('{string} is {string}', (element,text) => {
+      if(element==="specialization") {
+      webTextBox.typeText(commonLocators[element], text)
+      webTextBox.typeText(commonLocators[element], '{downarrow}')
+      webTextBox.typeText(commonLocators[element], '{enter}')
+      }
+      else if(element==="doctor Per Page") {
+        webText.shouldBeVisible(commonLocators[element],text)
+      }
+  });
+  
+Given('{string} is clicked',(element)=>{
+    webButton.click(commonLocators[element])
+});
+  
+Then('{string} contain doctor for search {string} are displayed',(element,text)=>{
+   webText.shouldBeVisible(commonLocators[element],text)
 });
 

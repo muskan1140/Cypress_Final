@@ -23,6 +23,9 @@
     "specialities Field":"div .MuiLink-root .MuiButtonBase-root:Last()",
     "alert Message":"div .MuiAutocomplete-noOptions",
     "search": "div .MuiInputBase-input:last()",
-    "specialization" : "div .MuiAutocomplete-root .MuiInputBase-root"
+    "specialization" : "div .MuiAutocomplete-root .MuiInputBase-root",
+    "doctor Per Page":"div .MuiTypography-root:eq(6)",
+    "Result":"div .MuiTypography-h6",
+    "error message":"div .MuiTypography-root:last()"
 
 }
