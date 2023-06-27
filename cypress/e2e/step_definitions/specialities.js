@@ -5,9 +5,6 @@ import WebText from "../../helpers//webText";
 
 const webText = new WebText();
 
-
-
-
 Given('{string} button is {string}',(text,element)=>{
    webText.shouldBeVisible(commonLocators[element],text)
 });
