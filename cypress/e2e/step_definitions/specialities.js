@@ -1,11 +1,10 @@
 import {Given,When,Then} from "@badeball/cypress-cucumber-preprocessor";
 import commonLocators from "../../pages/commonLocators.json";
 import WebText from "../../helpers//webText";
-import WebButton from "../../helpers/webButton";
 
 
 const webText = new WebText();
-const webButton = new WebButton();
+
 
 
 
