@@ -1,6 +1,6 @@
 Feature: Search page result functionality
 
-  https://team-1628225445927.atlassian.net/browse/MYD-156
+  # https://team-1628225445927.atlassian.net/browse/MYD-156
   @MYD-156 @Regression
   Scenario Outline: check for the search result page using search keyword or specialization
   Given user navigates to the "<Page Type>" page
@@ -16,7 +16,7 @@ Feature: Search page result functionality
 
 
   # //------------------------------------------------------------------------------------------------
-  https://team-1628225445927.atlassian.net/browse/MYD-156
+  # https://team-1628225445927.atlassian.net/browse/MYD-156
   @MYD-156
 
   Scenario Outline: check for the search result page using search keyword
@@ -32,7 +32,7 @@ Feature: Search page result functionality
 
 
   # //-------------------------------------------------------------------------------------------------
-  https://team-1628225445927.atlassian.net/browse/MYD-156
+  # https://team-1628225445927.atlassian.net/browse/MYD-156
   @MYD-156
 
   Scenario Outline: check for the search result page using specialization
@@ -48,7 +48,7 @@ Feature: Search page result functionality
 
 
   # //------------------------------------------------------------------------------------------------------
-  https://team-1628225445927.atlassian.net/browse/MYD-156
+  # https://team-1628225445927.atlassian.net/browse/MYD-156
   @MYD-156
 
   Scenario Outline: check for the search result page using unexpected string in search keyword or specialization
@@ -56,7 +56,7 @@ Feature: Search page result functionality
     And "search" keyword is "<keyword>"
     And "specialization" is "<speciality>"
     And "search Icon" is clicked
-    Then user should see "error message" "<message>"
+    Then user should see "error Message" "<message>"
 
     Examples:
       | Page Type | keyword | speciality | message         |
@@ -66,7 +66,7 @@ Feature: Search page result functionality
 
 
   # //-----------------------------------------------------------------------------------------------------------
-  #https://team-1628225445927.atlassian.net/browse/MYD-156
+  # https://team-1628225445927.atlassian.net/browse/MYD-156
   @MYD-156
 
   Scenario Outline: check for the search result page using no input given

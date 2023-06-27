@@ -14,21 +14,27 @@ const actions = new GenericActions();
 const webXpath = new WebXpath();
 const webText = new WebText();
 
-Given('user navigates to the {string} page',(url)=>{
-    actions.visit(Urls[url])
-});
+Given('user navigates to the {string} page', (url)=> {
+  cy.wait(2000)
+  actions.visit(Urls[url]);
+})
 
 When("user clicks on the {string} button",(element)=> {
     webButton.click(commonLocators[element])
 });
 
-When('user enters value {string} in the {string} input field',(name,element)=>{
-    webTextBox.typeText(commonLocators[element],name)
-    webTextBox.typeText(commonLocators[element], '{downarrow}')
-    webTextBox.typeText(commonLocators[element], '{enter}')
+// When('user enters value {string} in the {string} input field',(name,element)=>{
+//     webTextBox.typeText(commonLocators[element],name)
+//     webTextBox.typeText(commonLocators[element],'{downarrow}')
+//     webTextBox.typeText(commonLocators[element],'{enter}')
+// });
+
+When('user enters value {string} in the {string} input field', (text, element) => {
+  webButton.focusClick(commonLocators[element])
+  webTextBox.typeText(commonLocators[element], text)
 });
 
-Then('user can view message {string}', (text) => {
+Then('user can view {string}',(text) =>{
     webXpath.shouldContainTextByXpath(text)
 });
 
@@ -66,4 +72,8 @@ Given('{string} is clicked',(element)=>{
 Then('{string} contain doctor for search {string} are displayed',(element,text)=>{
    webText.shouldBeVisible(commonLocators[element],text)
 });
+
+Given('user clicks on the {string} field',(element) => {
+  webXpath.clickByXpath(element)
+})
 

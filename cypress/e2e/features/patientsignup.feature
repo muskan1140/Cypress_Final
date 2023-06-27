@@ -12,15 +12,15 @@ Feature:Patient Registration
         And user enters value "<Password>" in the "create Password" input field
         And user enters value "<Password>" in the "confirm Password" input field
         When user clicks on the "register" button
-        Then user can view message "<Registration Message>"
+        Then user can view "<Registration Message>"
 
             Examples:
                 | Name         | Email                   | Mobile Number | Password     | Gender Type | Page Type            | Date | Month | Year | Registration Message    |
-                | Hunter Brown | hunterbrown00@gmail.com | 9734895669    | 9797@Qwerty  | Male        | PatientRegistration | 5    | May   |1998  | Signed up successfully! |
+                | Hunter Brown | hunterbrown04@gmail.com | 9724811869    | 9797@Qwerty  | Male        | PatientRegistration  | 5    | May    |1998 | Signed up successfully! |
 
 
 
-    # //---------------------------------------------------------------------------------------------------------------------------------------------------
+#//---------------------------------------------------------------------------------------------------------------------------------------------------
 
     Scenario Outline:User navigates to the Patient Registration and signs up with invalid data
         Given user navigates to the "<Page Type>" page
@@ -30,7 +30,7 @@ Feature:Patient Registration
         And user enters value "<Mobile Number>" in the "mobile Number" input field
         And user enters value "<Password>" in the "create Password" input field
         And user enters value "<Password>" in the "confirm Password" input field
-        Then user can view message "<error Message>"
+        Then user can view "<error Message>"
         Examples:
             | Name  | Email       | Mobile Number | Page Type            | Password    | error Message                                | Gender Type |
             | sam.1 | abc@abc.com | 9541108298    | PatientRegistration | 9797@Qwerty | Please enter a valid name!                   | Male        |
@@ -42,7 +42,7 @@ Feature:Patient Registration
 
 
 
-    # #//----------------------------------------------------------------------------------------------------------------------------------------------------------
+#//----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
     Scenario Outline:User is not able to register with invalid password
@@ -53,7 +53,7 @@ Feature:Patient Registration
         And user enters value "<Mobile Number>" in the "mobile Number" input field
         And user enters value "<Password>" in the "create Password" input field
         And user enters value "<Password>" in the "confirm Password" input field
-        Then user can view message "<rule>"
+        Then user can view "<rule>"
         Examples:
             | Name      | Mobile Number | Gender Type| Email       | Password       | rule                                        | Page Type            |
             | Test User | 9876543211    | Male       | abc@abc.com | Alp@1          | Must contain at least 6 characters.         | PatientRegistration |
@@ -65,7 +65,7 @@ Feature:Patient Registration
 
 
 
-    # # //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     Scenario Outline:User is not able to register with existing mobile number & email
         Given user navigates to the "<Page Type>" page
@@ -75,7 +75,7 @@ Feature:Patient Registration
         And user enters value "<Mobile Number>" in the "mobile Number" input field
         And user enters value "<Password>" in the "create Password" input field
         And user enters value "<Password>" in the "confirm Password" input field
-        Then user can view message "<error Message>"
+        Then user can view "<error Message>"
         Examples:
             | Name         | Email                 | Mobile Number | Password    | Gender Type | Page Type            | Date | Month | Year | Email              | Mobile Number | error Message                 |
             | Hunter Brown | hunterbrown@gmail.com | 9541508298    | 9797@Qwerty | Male        | PatientRegistration | 5    | 5     | 1998 | test@testuser1.com | 9541308298    | Email address already exists! |

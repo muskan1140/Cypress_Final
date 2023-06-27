@@ -1,5 +1,9 @@
 {
     "Homepage":"/",
     "PatientRegistration":"/auth/signup",
-    "Dashboard":"/"
+    "Dashboard":"/",
+    "Login":"/auth/login",
+    "Forgot Password":"/forgot",
+    "Reset Password" : "/reset/34343",
+    "Specialities":"/specialities"
 }
