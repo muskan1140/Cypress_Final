@@ -4,7 +4,6 @@ import commonLocators from "../../pages/commonLocators.json";
 import Urls from "../../urls/Urls.json"
 import GenericActions from "../../utilities/genericActions";
 
-
 const webText = new WebText();
 const actions = new GenericActions();
 

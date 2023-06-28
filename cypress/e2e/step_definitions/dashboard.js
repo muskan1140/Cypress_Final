@@ -6,7 +6,6 @@ import commonLocators from "../../pages/commonLocators.json"
 const webButton = new WebButton();
 const webText = new WebText();
 
-
 Given('user can view list of {string}',(element)=>{
     webText.shouldBeVisible(commonLocators[element])
 });

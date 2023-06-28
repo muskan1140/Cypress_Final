@@ -5,12 +5,9 @@ import GenericActions from "../../utilities/genericActions";
 import credentials from "../../fixtures/example.json";
 import WebTextBox from "../../helpers/webTextBox";
 
-
 const webButton = new WebButton();
 const actions = new GenericActions();
 const webTextBox= new WebTextBox();
-
-
 
 Given('user logs in with {string} credentials',(Role)=>{
     actions.visit("/");

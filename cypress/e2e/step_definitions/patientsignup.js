@@ -6,7 +6,6 @@ import commonLocators from "../../pages/commonLocators.json"
 const webXpath = new WebXpath();
 const webSelectbox = new WebSelectBox();
 
-
 When('user selects checkbox with value {string}',(element)=>{
     webXpath.clickByXpath(element)
 });
