@@ -12,7 +12,7 @@ Feature: Change password
         Then user can view "<Message>"
         Examples:
             | Role    | Page Type       | Current Password | New Password | Confirm Password | Message                       |
-            | Patient | Change Password | Jyoti@114        | Jyoti@136    | Jyoti@136        | Password changes successfully |
+            | Patient | Change Password | Jyoti@136        | Jyoti@143    | Jyoti@143        | Password changes successfully |
 
     # //------------------------------------------------------------------------------------------------------------------------------------------
 

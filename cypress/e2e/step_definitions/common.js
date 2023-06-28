@@ -7,7 +7,6 @@ import GenericActions from "../../utilities/genericActions";
 import WebXpath from "../../helpers/webXpath";
 import WebText from "../../helpers/webText";
 
-
 const webTextBox = new WebTextBox();
 const webButton = new WebButton();
 const actions = new GenericActions();
@@ -22,12 +21,6 @@ Given('user navigates to the {string} page', (url)=> {
 When("user clicks on the {string} button",(element)=> {
     webButton.click(commonLocators[element])
 });
-
-// When('user enters value {string} in the {string} input field',(name,element)=>{
-//     webTextBox.typeText(commonLocators[element],name)
-//     webTextBox.typeText(commonLocators[element],'{downarrow}')
-//     webTextBox.typeText(commonLocators[element],'{enter}')
-// });
 
 When('user enters value {string} in the {string} input field', (text, element) => {
   webButton.focusClick(commonLocators[element])

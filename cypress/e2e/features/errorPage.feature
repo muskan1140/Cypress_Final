@@ -33,7 +33,7 @@ Feature: Error Page
       | 404 error | doctors      | Login,20+ Specialities,240+ Doctors |
       | 404 error | login/SignUp | Login,Sign up,Forgot Password       |
 
-  # //-------------------------------------------------------------------------------------------------------------
+  # # //-------------------------------------------------------------------------------------------------------------
   @ERPA004 @MYD-83 @Regression @Sanity @NotAutomated @Doctor @Error
   Scenario Outline: Checking the functionality of 404 error page for doctors
     Given user logs in with "<Role>" credentials

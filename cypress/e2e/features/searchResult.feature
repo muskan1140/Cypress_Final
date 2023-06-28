@@ -8,7 +8,7 @@ Feature: Search page result functionality
   And "specialization" is "<speciality>"
   And "search Icon" is clicked
   And "doctor per page" is "<count>"
-  Then "Result" contain doctor for search "<keyword>" are displayed
+  Then "result" contain doctor for search "<keyword>" are displayed
 
   Examples:
     |Page Type| keyword    | speciality    | page | count |
@@ -24,7 +24,7 @@ Feature: Search page result functionality
   And "search" keyword is "<keyword>"
   And "doctor per page" is "<count>"
   And "search Icon" is clicked
-  Then "Result" contain doctor for search "<keyword>" are displayed
+  Then "result" contain doctor for search "<keyword>" are displayed
 
   Examples:
     |Page Type| keyword | page | count |
@@ -40,7 +40,7 @@ Feature: Search page result functionality
     And "specialization" is "<speciality>"
     And "doctor per page" is "<count>"
     And "search Icon" is clicked
-    Then "Result" contain doctor for search "<speciality>" are displayed
+    Then "result" contain doctor for search "<speciality>" are displayed
 
     Examples:
       | Page Type | speciality | page | count |
