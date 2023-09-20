@@ -20,7 +20,7 @@ Feature: Error Page
       | Page Type | Role    | Text Links       | Item                          |
       | 404 error | Patient | My Appointments  | My Appointment                |
       | 404 error | Patient | Account Settings | My Profile                    |
-      | 404 error | Patient | doctors          | 20+ Specialities,240+ Doctors |
+      | 404 error | Patient | doctors          | 20+ Specialities,100+ Doctors |
 
   # //--------------------------------------------------------------------------------------------------------
   @ERPA003 @MYD-83 @Regression @NotAutomated @Error
@@ -30,7 +30,7 @@ Feature: Error Page
     Then the corresponding page appears with the expected elements: "<Item>"
     Examples:
       | Page Type | Text Links   | Item                                |
-      | 404 error | doctors      | Login,20+ Specialities,240+ Doctors |
+      | 404 error | doctors      | Login,20+ Specialities,100+ Doctors |
       | 404 error | login/SignUp | Login,Sign up,Forgot Password       |
 
   # # //-------------------------------------------------------------------------------------------------------------
