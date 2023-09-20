@@ -7,7 +7,7 @@ Feature: Dashboard
 
   Examples:
       | Page Type | Item                         | 
-      | Homepage  | 20+ Specialities,240+ Doctors|
+      | Homepage  | 20+ Specialities,100+ Doctors|
 
 
 # //-------------------------------------------------------------------------------------------
