@@ -7,7 +7,7 @@ Feature: Sidebar Functionality
         Then the corresponding page appears with the expected elements: "<Element>"
         Examples:
             | Page Type | Item         | Element                       |
-            | Homepage  | Doctors      | 20+ Specialities,240+ Doctors |
+            | Homepage  | Doctors      | 20+ Specialities,100+ Doctors |
             | Homepage  | Specialities | 20+ Specialities              |
 
 
@@ -21,7 +21,7 @@ Feature: Sidebar Functionality
         Then the corresponding page appears with the expected elements: "<Element>"
         Examples:
             | Role    | Page Type | Item             | Element                            |
-            | Patient | Homepage  | Doctors          | 20+ Specialities,240+ Doctors      |
+            | Patient | Homepage  | Doctors          | 20+ Specialities,100+ Doctors      |
             | Patient | Homepage  | Specialities     | 20+ Specialities                   |
             | Patient | Homepage  | My Appointments  | My Appointments                    |
             | Patient | Homepage  | Account Settings | My Profile,Name,Phone Number,Email |
