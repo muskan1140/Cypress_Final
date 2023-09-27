@@ -5,50 +5,50 @@ Feature: Dashboard
     Given user navigates to the "<Page Type>" page
     Then the corresponding page appears with the expected elements: "<Item>"
 
-  Examples:
-      | Page Type | Item                         | 
-      | Homepage  | 20+ Specialities,100+ Doctors|
+    Examples:
+      | Page Type | Item                          |
+      | Homepage  | 20+ Specialities, Doctors     |
 
 
-# //-------------------------------------------------------------------------------------------
+  # //-------------------------------------------------------------------------------------------
 
- @DA002 @Regression @Sanity @NotAutomated @Dashboard @SpecialitiesCard @Patient @MYD-76
+  @DA002 @Regression @Sanity @NotAutomated @Dashboard @SpecialitiesCard @Patient @MYD-76
   Scenario Outline: Check the functionality of Specialities Card
     Given user navigates to the "<Page Type>" page
     When user clicks on the "<SpecialityCard>" button
     Then the corresponding page appears with the expected elements: "<Item>"
 
-    Examples: 
-      | Page Type | SpecialityCard         | Item                                              |
-      | Homepage  | fourth Speciality Card | Dr. Layne Ryan,Dr. Henry Friesen,Dr. Alberta Yost |
+    Examples:
+      | Page Type | SpecialityCard         | Item                                            |
+      | Homepage  | fourth Speciality Card | Dr. Alice Brakus,Dr. Wava Grant,Dr. Kevon Swift |
 
-# //--------------------------------------------------------------------------------------------
+  # //--------------------------------------------------------------------------------------------
 
- @DA003 @Regression @NotAutomated @Dashboard @SpecialitiesCard @Patient @MYD-76
+  @DA003 @Regression @NotAutomated @Dashboard @SpecialitiesCard @Patient @MYD-76
   Scenario Outline: Check the functionality of View all specialities link
     Given user navigates to the "<Page Type>" page
     When user clicks on the "view All Specialities" button
     Then the corresponding page appears with the expected elements: "<Item>"
 
-  Examples:
+    Examples:
       | Page Type | Item                                                  |
       | Homepage  | Dermatology,Bone Marrow,Clinical Psychology,Audiology |
 
 
-# //------------------------------------------------------------------------------------------------
+  # //------------------------------------------------------------------------------------------------
 
-@DA004 @Regression @Sanity @NotAutomated @Dashboard @DoctorCard @Patient @MYD-76
+  @DA004 @Regression @Sanity @NotAutomated @Dashboard @DoctorCard @Patient @MYD-76
   Scenario Outline: Check the functionality of Doctor card
     Given user navigates to the "<Page Type>" page
     When user clicks on the "<Doctor Card>" button
     Then the corresponding page appears with the expected elements: "<Item>"
 
-  Examples:
-      | Page Type | Doctor Card       | Item                                                          |
-      | Homepage  | first Doctor Card | Consultation Fee: Rs. 3022,Specialities,Qualifications,Reviews|
+    Examples:
+      | Page Type | Doctor Card       | Item                                                           |
+      | Homepage  | first Doctor Card | Consultation Fee: Rs. 3022,Specialities,Qualifications,Reviews |
 
 
-# //------------------------------------------------------------------------------------------------------
+  # //------------------------------------------------------------------------------------------------------
 
   @DA005 @Regression @NotAutomated @Dashboard @Pagination @Patient @MYD-31
   Scenario Outline: Check the functionality of pagination on Doctor cards by clicking on number

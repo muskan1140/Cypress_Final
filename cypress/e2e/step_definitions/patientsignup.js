@@ -3,13 +3,12 @@ import WebXpath from "../../helpers/webXpath.js";
 import WebSelectBox from "../../helpers/webSelectBox.js";
 import commonLocators from "../../pages/commonLocators.json"
 
-const webXpath = new WebXpath();
-const webSelectbox = new WebSelectBox();
-
-When('user selects checkbox with value {string}',(element)=>{
-    webXpath.clickByXpath(element)
+When('user selects checkbox with value {string}',(elementIdentifier)=>{
+    const webXpath = new WebXpath();
+    webXpath.clickByXpath(elementIdentifier)
 });
 
-When('user selects {string} in the {string} input select field', (text,element) => {
-    webSelectbox.selectDropDownUsingText(commonLocators[element], text)
+When('user selects {string} in the {string} input select field', (text,elementIdentifier) => {
+    const webSelectbox = new WebSelectBox();
+    webSelectbox.selectDropDownUsingText(commonLocators[elementIdentifier], text)
 });

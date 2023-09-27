@@ -1,39 +1,42 @@
+import WebElement from "./webElement";
+const webElement = new WebElement();
+
 class WebButton {
   
-    click(element) {
-    cy.get(element).click().then(function () {
+    click(elementIdentifier) {
+        webElement.getWebElement(elementIdentifier).click().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
         });
     }
 
-    multipleClick(element) {
-        cy.get(element).click({ multiple: true }).then(function () {
+    multipleClick(elementIdentifier) {
+        webElement.getWebElement(elementIdentifier).click({ multiple: true }).then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
         });
     }
 
-    focusClick(element) {
-        cy.get(element).click({ force: true }).then(function () {
+    focusClick(elementIdentifier) {
+        webElement.getWebElement(elementIdentifier).click({ force: true }).then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
         });
     }
 
-    realclick(element) {
-        cy.get(element).realClick().then(function () {
+    realclick(elementIdentifier) {
+        webElement.getWebElement(elementIdentifier).realClick().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
             cy.log("--->Error: The element couldn't get clicked due to: " + err);
         });
     }
 
-    check(element){
-        cy.get(element).check().then(function() {
+    check(elementIdentifier){
+        webElement.getWebElement(elementIdentifier).check().then(function() {
             cy.log("The element got checked");
         }), function (err){
             cy.log("-->Error: The element couldn't get checked due to:"+ err);
@@ -42,3 +45,4 @@ class WebButton {
 }
 
 export default WebButton;
+

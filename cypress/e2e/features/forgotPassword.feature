@@ -19,7 +19,7 @@ Feature: Forgot Reset Password
         Then user can view "<Message>"
         Examples:
             | Page Type       | Email            | Message                          |
-            | Forgot Password | poonam@gmail.com | We have sent password reset link |
+            | ForgotPassword  | poonam@gmail.com | We have sent password reset link |
 
     # //--------------------------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ Feature: Forgot Reset Password
         Then user can view "<Error Message>"
         Examples:
             | Page Type       | Email             | Error Message                              |
-            | Forgot Password | poonam5@gmail.com | Unable to reset password. Please try again |
+            | ForgotPassword  | poonam5@gmail.com | Unable to reset password. Please try again |
 
 
     # //---------------------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ Feature: Forgot Reset Password
         Then user can view "<Message>"
         Examples:
             | Page Type      | New Password | Confirm Password | Message                                    |
-            | Reset Password | Poonam#12    | Poonam#12        | Unable to reset password. Please try again |
+            | ResetPassword  | Poonam#12    | Poonam#12        | Unable to reset password. Please try again |
 
     # //------------------------------------------------------------------------------------------------------------
 
@@ -56,10 +56,9 @@ Feature: Forgot Reset Password
         And user enters value "<Confirm Password>" in the "confirm password" input field
         Then user can view "<Error Message>"
         Examples:
-            | Page Type      | New Password | Confirm Password | Error Message                  |
-            | Reset Password | Alp@1        | Alp@1            | At least six characters        |
-            | Reset Password | Alpha123     | Alpha123         | At least one special character |
-            | Reset Password | ALPHA@12     | ALPHA@12         | A lowercase letter             |
-            | Reset Password | alpha@123    | alpha@123        | An uppercase letter            |
-            | Reset Password | Alpha@#$     | Alpha@#$         | At least one number            |
-            | Reset Password | Alpha@12     | Alpha@123        | Passwords must match           |
+            | Page Type     | New Password | Confirm Password | Error Message                  |
+            | ResetPassword | Alpha123     | Alpha123         | At least one special character |
+            | ResetPassword | ALPHA@12     | ALPHA@12         | A lowercase letter             |
+            | ResetPassword | alpha@123    | alpha@123        | An uppercase letter            |
+            | ResetPassword | Alpha@#$     | Alpha@#$         | At least one number            |
+            | ResetPassword | Alpha@12     | Alpha@123        | Passwords must match           |

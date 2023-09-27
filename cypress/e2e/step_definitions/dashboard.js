@@ -3,13 +3,12 @@ import WebButton from "../../helpers/webButton.js";
 import WebText from "../../helpers/webText.js";
 import commonLocators from "../../pages/commonLocators.json"
 
-const webButton = new WebButton();
-const webText = new WebText();
-
-Given('user can view list of {string}',(element)=>{
-    webText.shouldBeVisible(commonLocators[element])
+Given('user can view list of {string}',(elementIdentifier)=>{
+    const webText = new WebText();
+    webText.shouldBeVisible(commonLocators[elementIdentifier])
 });
 
-When('user clicks on {string} page of {string}', (text,element) => {
-    webButton.click(commonLocators[element],text)
+When('user clicks on {string} page of {string}', (text,elementIdentifier) => {
+    const webButton = new WebButton();
+    webButton.click(commonLocators[elementIdentifier],text)
 });

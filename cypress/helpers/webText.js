@@ -1,7 +1,9 @@
+import WebElement from "./webElement";
+const webElement = new WebElement();
 class WebText {
    
-    getText(element) {
-        cy.get(element).invoke('text').then(function (text) {
+    getText(elementIdentifier) {
+        webElement.getWebElement(elementIdentifier).invoke('text').then(function (text) {
                     cy.log("The text of element is captured which is: " + text);
 
 
@@ -10,8 +12,8 @@ class WebText {
         });
     }
 
-    shouldBeVisible(element, text) {
-        cy.get(element).should('be.visible', text).then(function (text) {
+    shouldBeVisible(elementIdentifier, text) {
+        webElement.getWebElement(elementIdentifier).should('be.visible', text).then(function (text) {
             cy.log("element should be visible:" + text);
 
         },
@@ -20,8 +22,8 @@ class WebText {
             });
     }
 
-    type(element, value) {
-        cy.get([element]).type(value).then(function () {
+    type(elementIdentifier, value) {
+        webElement.getWebElement([elementIdentifier]).type(value).then(function () {
             cy.log("typing field values should be valid");
 
         },
@@ -30,8 +32,8 @@ class WebText {
             });
     }
 
-    shouldHaveText(element, text) {
-        cy.get(element).should('have.text', text).then(function (text) {
+    shouldHaveText(elementIdentifier, text) {
+        webElement.getWebElement(elementIdentifier).should('have.text', text).then(function (text) {
             cy.log("The element is have: " + text);
 
         }, function (err) {
@@ -40,8 +42,8 @@ class WebText {
 
     }
 
-    shouldHaveValue(element, value) {
-        element.should('have.value', value).then(function (text) {
+    shouldHaveValue(elementIdentifier, value) {
+        elementIdentifier.should('have.value', value).then(function (text) {
             cy.log("The element have value: " + value);
 
         }, function (err) {
@@ -50,8 +52,8 @@ class WebText {
 
     }
 
-    shouldContainText(element, text) {
-        cy.get(element).should('contain', text).then(function (text) {
+    shouldContainText(elementIdentifier, text) {
+        webElement.getWebElement(elementIdentifier).should('contain', text).then(function (text) {
             cy.log("The element contain: " + text);
 
         }, function (err) {
@@ -60,9 +62,9 @@ class WebText {
     }
 
 
-    verifyExactText(element, expectedtext) {
+    verifyExactText(elementIdentifier, expectedtext) {
         try {
-            if (element.should('have.text', expectedtext)) {
+            if (elementIdentifier.should('have.text', expectedtext)) {
                 cy.log("The Expected Text matches the actual " + expectedtext);
             }
             else {
@@ -74,9 +76,9 @@ class WebText {
         }
     }
 
-    verifyPartialText(element, expectedtext) {
+    verifyPartialText(elementIdentifier, expectedtext) {
         try {
-            if (element.should('contain', expectedtext)) {
+            if (elementIdentifier.should('contain', expectedtext)) {
                 cy.log("The Expected Text matches the actual " + expectedtext);
             }
             else {
@@ -88,9 +90,9 @@ class WebText {
         }
     }
 
-    verifyExactAttribute(element, attribute, value) {
+    verifyExactAttribute(elementIdentifier, attribute, value) {
         try {
-            if (element.invoke('attr', attribute).should('equal', value)) {
+            if (elementIdentifier.invoke('attr', attribute).should('equal', value)) {
                 cy.log("The expected attribute: " + attribute + " value matches the actual " + value);
             }
             else {
@@ -103,10 +105,10 @@ class WebText {
 
     }
 
-    verifyPartialAttribute(element, attribute, value) {
+    verifyPartialAttribute(elementIdentifier, attribute, value) {
 
         try {
-            if (element.invoke('attr', attribute).should('contain', value)) {
+            if (elementIdentifier.invoke('attr', attribute).should('contain', value)) {
                 cy.log("The expected attribute: " + attribute + " value matches the actual " + value);
             }
             else {

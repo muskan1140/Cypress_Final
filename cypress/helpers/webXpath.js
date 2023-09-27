@@ -14,8 +14,8 @@ class WebXpath {
         return xpathString;
     }
 
-    clickByXpath(element){
-        let getXpathValue = this.setXpathValue(element);
+    clickByXpath(elementIdentifier){
+        let getXpathValue = this.setXpathValue(elementIdentifier);
         cy.xpath(getXpathValue).click().then(function () {
             cy.log("The element got clicked.");
         }, function (err) {
@@ -23,8 +23,8 @@ class WebXpath {
         });
     }
 
-    typeTextByXpath(element,type){
-        let getXpathValue = this.setXpathValue(type,element);
+    typeTextByXpath(elementIdentifier,type){
+        let getXpathValue = this.setXpathValue(type,elementIdentifier);
         cy.xpath(getXpathValue).clear().type(word).then(function () {
             cy.log('Typing of the field with value: ' + data);
         }, function (err) {

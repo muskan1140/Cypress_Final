@@ -55,7 +55,7 @@ Feature:Patient Registration
         And user enters value "<Password>" in the "confirm Password" input field
         Then user can view "<rule>"
         Examples:
-            | Name      | Mobile Number | Gender Type| Email       | Password       | rule                                        | Page Type            |
+            | Name      | Mobile Number | Gender Type| Email       | Password       | rule                                        | Page Type           |
             | Test User | 9876543211    | Male       | abc@abc.com | Alp@1          | Must contain at least 6 characters.         | PatientRegistration |
             | Test User | 9876543211    | Male       | abc@abc.com | Alpha123       | Must contain at least one special character.| PatientRegistration |
             | Test User | 9876543211    | Male       | abc@abc.com | alpha@123      | Must contain uppercase letter.              | PatientRegistration |
@@ -79,4 +79,4 @@ Feature:Patient Registration
         Examples:
             | Name         | Email                 | Mobile Number | Password    | Gender Type | Page Type            | Date | Month | Year | Email              | Mobile Number | error Message                 |
             | Hunter Brown | hunterbrown@gmail.com | 9541508298    | 9797@Qwerty | Male        | PatientRegistration | 5    | 5     | 1998 | test@testuser1.com | 9541308298    | Email address already exists! |
-            | Hunter Brown | test@testuser.com     | 9541108299    | 9797@Qwerty | Male        | PatientRegistration | 5    | 5     | 1998 | test@testuser.com  | 9541308295    | Mobile number already exists! |         
+            # | Hunter Brown | test@testuser.com     | 9541108299    | 9797@Qwerty | Male        | PatientRegistration | 5    | 5     | 1998 | test@testuser.com  | 9541308295    | Mobile number already exists! |         

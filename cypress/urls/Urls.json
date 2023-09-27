@@ -3,7 +3,7 @@
     "PatientRegistration":"/auth/signup",
     "Dashboard":"/",
     "Login":"/auth/login",
-    "Forgot Password":"/forgot",
-    "Reset Password" : "/reset/34343",
+    "ForgotPassword":"/forgot",
+    "ResetPassword" : "/reset/34343",
     "Specialities":"/specialities"
 }

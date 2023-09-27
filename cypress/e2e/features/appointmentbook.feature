@@ -10,8 +10,8 @@ Feature: Appointment Booking
         And user clicks on the "<Time Slot>" button
         Then user can view "<Error Message>"
         Examples:
-            | Page Type | Data   | Doctor Card       | Date Slot  | Time Slot       | Error Message |
-            | Homepage  | Poonam | Dr. Poonam Sharma | first Slot | first Time Slot | Please        |
+            | Page Type | Data   | Doctor Card       | Date Slot   | Time Slot       | Error Message|
+            | Homepage  | Priya  | Dr. Priya Sharma  |  first Slot | first Time Slot | Please       |
 
 
     # //------------------------------------------------------------------------------------------------------------------------------
@@ -37,9 +37,9 @@ Feature: Appointment Booking
         Then user can view "<Message>"
         Examples:
         Examples:
-            | Role    | Page Type | Data   | Doctor            | Date Slot  | Time Slot       | Card Number      | Expiration Month | Expiration Year | Security Code | Message                             |
-            | Patient | Homepage  | Poonam | Dr. Poonam Sharma | first Slot | first Time Slot | 4242424242424242 | select field     | select field    | 1234          | Appointment is booked successfully! |
-
+            | Role    | Page Type | Data   | Doctor           | Date Slot  | Time Slot       | Card Number      | Expiration Month | Expiration Year | Security Code | Message                             |
+            | Patient | Homepage  | Priya  | Dr. Priya Sharma | first Slot | first Time Slot | 4242424242424242 | select field     | select field    | 1234          | Appointment is booked successfully! |
+ 
 
     # //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -66,5 +66,5 @@ Feature: Appointment Booking
         And user clicks on the "MAKE PAYMENT" field
         Then user can view "<Message>"
         Examples:
-            | Role    | Page Type | Data   | Doctor            | Date Slot  | Time Slot       | Second Radio Button | Name          | Mobile Number | Card Number      | Expiration Month | Expiration Year | Security Code | Message                             |
-            | Patient | Homepage  | Poonam | Dr. Poonam Sharma | first Slot | first Time Slot | Someone Else        | Poonam Sharma | 8787878787    | 4242424242424242 | select field     | select field    | 1234          | Appointment is booked successfully! |
+            | Role    | Page Type | Data  | Doctor            | Date Slot  | Time Slot       | Second Radio Button | Name          | Mobile Number | Card Number      | Expiration Month | Expiration Year | Security Code | Message                             |
+            | Patient | Homepage  | Priya | Dr. Priya Sharma | first Slot | first Time Slot | Someone Else        | Poonam Sharma | 8787878787    | 4242424242424242 | select field     | select field    | 1234          | Appointment is booked successfully! |

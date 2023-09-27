@@ -10,5 +10,5 @@ And user clicks on the "submit" button
 Then user navigates to the "<Page Type>" page 
 
     Examples:
-      | Page Type |email         | password         |
-      | Homepage  |PATIENT_EMAIL | PATIENT_PASSWORD |
+      | Page Type |email         | password      |
+      | Homepage  |User_email    | User_password |

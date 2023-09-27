@@ -8,11 +8,11 @@ Feature: Search Bar
     Then the corresponding page appears with the expected elements: "<Item>"
 
     Examples:
-      | Data    | Item                                  | Page Type |
-      | Rishika | Dr. Rishika Gupta                     | Homepage  |
-      | Ra      | Dr. Kasandra Halvorson,Dr. Mireya Rath| Homepage  |
+      | Data    | Item                                   | Page Type |
+      | Alice   | Dr. Alice Brakus                       | Homepage  |
+      | Rosi    | Dr. Rosina Watsica,Dr. Kathleen Strosin| Homepage  |
 
-# //-----------------------------------------------------------------------------------------------------------
+# # //-----------------------------------------------------------------------------------------------------------
 
   @SEBA003 @Regression @Sanity @MYD-40 @NotAutomated @Patient @Specialities @Search
   Scenario Outline: Search Bar - Check for the search functionality for doctors and specialities
@@ -24,9 +24,9 @@ Feature: Search Bar
     Then the corresponding page appears with the expected elements: "<Item>"
 
     Examples:
-      | Data     | Item                  | Page Type | Value                           |
-      | Iva      | Dr. Iva Jerde         | Homepage  | Diabetology                     |
-      | Kasandra | Dr. Kasandra Halvorson| Homepage  | Clinical Nutrition & Dietetics  |
+      | Data     | Item             | Page Type | Value                           |
+      | Sarah    | Dr. Sarah Lynch  | Homepage  | Diabetology                     |
+      | Sasha    | Dr. Sasha Wehner | Homepage  | Clinical Nutrition & Dietetics  |
 
 
 # //---------------------------------------------------------------------------------------------------------------
